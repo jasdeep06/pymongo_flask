@@ -130,7 +130,7 @@ for movie in movies.find({"$text":{"$search":"dwarves hobbit"}}):
 
 #find all movies that have a synopsis that contains the word "gold" and "dragon"
 for movie in movies.find({"$text":{"$search":"\"gold\" \"dragon\""}}):
-    print(movie)
+    pprint(movie)
 
 
 #delete the movie "Pee Wee Herman's Big Adventure"
@@ -208,32 +208,32 @@ comments.insert_many(comments_info)
 
 #find all users
 for user in users.find():
-    print(user)
+    pprint(user)
 
 #find all posts
 for post in posts.find():
-    print(post)
+    pprint(post)
 
 #find all posts that was authored by "GoodGuyGreg"
 for post in posts.find({"username":"GoodGuyGreg"}):
-    print(post)
+    pprint(post)
 
 #find all posts that was authored by "ScumbagSteve"
 for post in posts.find({"username":"ScumbagSteve"}):
-    print(post)
+    pprint(post)
 
 #find all comments
 for comment in comments.find():
-    print(comment)
+    pprint(comment)
 
 #find all comments that was authored by "GoodGuyGreg"
 for comment in comments.find({"username":"GoodGuyGreg"}):
-    print(comment)
+    pprint(comment)
 
 #find all comments that was authored by "ScumbagSteve"
 for comment in comments.find({"username":"ScumbagSteve"}):
-    print(comment)
+    pprint(comment)
 
 #find all comments belonging to the post "Reports a bug in your code"
 for comment in comments.find({"post":posts.find_one({"title":"Reports a bug in your code"})["_id"]}):
-    print(comment)
+    pprint(comment)
